@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estudiantes</title>
+</head>
+<body>
+<h1>Estudiantes del curso</h1>
+<form method="post">
+    <label>Nombre: </label><br>
+    <input type="text" name="est_nombre"><br>
+    <label>Carrera: </label><br>
+    <select name="est_carrera" required>
+        <option value="" disabled selected>- Seleccionar -</option>
+        <option value="informatica">Ing. Informatica</option>
+        <option value="ambiental">Ing. Ambiental</option>
+        <option value="industrial">Ing. Industrial</option>
+    </select>
+    <br>
+    <button type="submit">Guardar</button>
+</form>
+
+<ul>
+{% for es in est %}
+<li> {{ es.nombre }} de Ingeniería {{ es.carrera }} </li>
+{% endfor %}
+</ul>
+</body>
+</html>
